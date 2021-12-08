@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_IL4NkFgQEeyIIYmNSkAYEw" name="poc-state-machine">
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_IMkxIFgQEeyIIYmNSkAYEw" name="StateMachine1" isReentrant="true">
+    <region xmi:type="uml:Region" xmi:id="_INJ_8FgQEeyIIYmNSkAYEw" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_znQgsFgUEeyIIYmNSkAYEw" name="" source="_JgWtMFgQEeyIIYmNSkAYEw" target="_recmgFgUEeyIIYmNSkAYEw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_dGmhwFgVEeyIIYmNSkAYEw" source="_recmgFgUEeyIIYmNSkAYEw" target="_VoWAcFgVEeyIIYmNSkAYEw">
+        <trigger xmi:type="uml:Trigger" xmi:id="_N9KykFgXEeyIIYmNSkAYEw" name="SUCCESS" event="_7F_4QFgWEeyIIYmNSkAYEw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_dzeO0FgVEeyIIYmNSkAYEw" source="_recmgFgUEeyIIYmNSkAYEw" target="_aHlL4FgVEeyIIYmNSkAYEw">
+        <trigger xmi:type="uml:Trigger" xmi:id="_rkieEFgtEeyIIYmNSkAYEw" event="_BBilcFgeEeyIIYmNSkAYEw"/>
+        <trigger xmi:type="uml:Trigger" xmi:id="_tqbMgFgtEeyIIYmNSkAYEw" event="_TziwEVgXEeyIIYmNSkAYEw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_V5CkgFg5EeyIIYmNSkAYEw" source="_VoWAcFgVEeyIIYmNSkAYEw" target="_N203AFg4EeyIIYmNSkAYEw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_XxEdIFg5EeyIIYmNSkAYEw" source="_aHlL4FgVEeyIIYmNSkAYEw" target="_WqX60Fg5EeyIIYmNSkAYEw"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_JgWtMFgQEeyIIYmNSkAYEw" name="ALLOCATED"/>
+      <subvertex xmi:type="uml:State" xmi:id="_recmgFgUEeyIIYmNSkAYEw" name="WAITING_FOR_PAYMENT">
+        <entry xmi:type="uml:Activity" xmi:id="_7ulxMFg1EeyIIYmNSkAYEw" name="allocateProductAction"/>
+      </subvertex>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_VoWAcFgVEeyIIYmNSkAYEw" name="SUCCESS">
+        <entry xmi:type="uml:Activity" xmi:id="_fJC2cFgcEeyIIYmNSkAYEw" name="paymentSuccessAction"/>
+      </subvertex>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_aHlL4FgVEeyIIYmNSkAYEw" name="FAIL">
+        <entry xmi:type="uml:Activity" xmi:id="_EphDoFgcEeyIIYmNSkAYEw" name="paymentFailAction"/>
+      </subvertex>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_N203AFg4EeyIIYmNSkAYEw" name="Terminate" kind="terminate"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_WqX60Fg5EeyIIYmNSkAYEw" name="CopyOf_Terminate_9" kind="terminate"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_0CZ5sFgWEeyIIYmNSkAYEw" name="SUCCESS"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_7F_4QFgWEeyIIYmNSkAYEw" name="SUCCESS" signal="_0CZ5sFgWEeyIIYmNSkAYEw"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_TziwEFgXEeyIIYmNSkAYEw" name="FAIL"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_TziwEVgXEeyIIYmNSkAYEw" name="FAIL" signal="_TziwEFgXEeyIIYmNSkAYEw"/>
+  <packagedElement xmi:type="uml:TimeEvent" xmi:id="_BBilcFgeEeyIIYmNSkAYEw" name="FailTimeEvent" isRelative="true">
+    <when xmi:type="uml:TimeExpression" xmi:id="_qPOOwFgeEeyIIYmNSkAYEw">
+      <expr xmi:type="uml:LiteralInteger" xmi:id="_qPOOwVgeEeyIIYmNSkAYEw" value="10000"/>
+    </when>
+  </packagedElement>
+</uml:Model>
